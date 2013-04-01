@@ -20,6 +20,7 @@ After a ton of searching, I found about three websites that ranged from outright
 * mobile friendly editing (and reading)
 
 While I do really like where this project is headed, I am working on quite a few things at the moment (and I gotta make that money!) so updates may be on the slow side. If you would like to pull my attention in this direction or just show me that you like my work, I would appreciate any donations to keep me people powered or just send me an email at ykuzma1+github@gmail.com.
+
 <a href="http://flattr.com/thing/1222424/ykuzma1-on-GitHub" target="_blank">
   <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
