@@ -119,7 +119,7 @@ class Handler(webapp2.RequestHandler):
             self.redirect(login_url, abort=True)
 
 
-class MainPage(Handler):
+class PostHandler(Handler):
     def get(self):
         self.admin_or_login()
         self.render('new-blog-post.html')
@@ -146,7 +146,7 @@ class MailManHandler(Handler):
         
         self.redirect('/blog')
         
-class FrontBlogHandler(Handler):
+class FrontHandler(Handler):
     def get(self):
         posts = []
         limit = 10
@@ -188,7 +188,7 @@ class FrontBlogHandler(Handler):
         
         self.render('view-blog.html', posts=posts)
 
-class PostDateHandler(Handler):
+class DateHandler(Handler):
     def get(self, year, month, day, offset=0):
         date = datetime.date(int(year), int(month), int(day))
         try:
@@ -210,11 +210,11 @@ class NotFoundPage(Handler):
         self.render('404.html')
 
 
-routes = [('/', MainPage),
+routes = [('/post', PostHandler),
           ('/post-already', MailManHandler),
-          ('/blog/?', FrontBlogHandler),
-          ('/blog/(\d{4})[-. /](\d{1,2})[-. /](\d{1,2})/?', PostDateHandler),
-          ('/blog/(\d{4})[-. /](\d{1,2})[-. /](\d{1,2})/(\d+)', PostDateHandler),
+          ('/blog/?', FrontHandler),
+          ('/blog/(\d{4})[-. /](\d{1,2})[-. /](\d{1,2})/?', DateHandler),
+          ('/blog/(\d{4})[-. /](\d{1,2})[-. /](\d{1,2})/(\d+)', DateHandler),
           ('/.*', NotFoundPage)]
         
 app = webapp2.WSGIApplication(routes, debug=True)
