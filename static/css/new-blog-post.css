@@ -1,0 +1,65 @@
+form#blog-post {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 10px 30px;
+}
+
+textarea {
+    padding: 0;
+    border: 0;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    box-shadow: none;
+    color: #444;
+    font-family: Arial;
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+textarea:focus {
+    outline: none;    
+}
+
+.post-title {
+    font-size: 48px;
+    font-weight: bold;
+    height: 1.5em;
+}
+
+textarea.post-body {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 80px 0;
+    font-size: 18px;
+}
+
+textarea.post-body:hover {
+    overflow-y: auto;
+}
+
+input[type=submit]:hover {
+    opacity: 0.7;
+}
+
+input[type=submit]#well-post-it-already {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 150px;
+    color: #fff;
+    background-color: rgba(0, 136, 204, 0.7);
+    border: none;
+    border-radius: 10px;
+    font-size: 26px;
+    font-weight: bold;
+}
