@@ -71,6 +71,6 @@ class Mail(ndb.Model):
         if limit:
             key_list = key_list[:limit]
             
-        posts = [ndb.get(key) for key in key_list]
+        posts = [ndb.Key(urlsafe=key).get() for key in key_list]
         
         return posts

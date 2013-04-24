@@ -90,7 +90,7 @@ class NewHandler(Handler):
         # get blog post document search properties
         fields = [search.TextField(name='title', value=title),
                   search.TextField(name='body', value=body)]
-        doc = search.Document(doc_id=str(mail_key.id()), fields=fields)
+        doc = search.Document(doc_id=mail_key.urlsafe(), fields=fields)
         
         # put blog post in document search
         try:
