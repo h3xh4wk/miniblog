@@ -1,62 +1,23 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Miniblog</title>
-        <meta name="description" content="">
+        <title>miniblog</title>
+        <meta name="description" content="frictionless, sane blogging">
         <meta name="viewport" content="width=device-width">
 
-        <!--<link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">-->
         <link rel="stylesheet" href="/css/miniblog.css">
         <link rel="stylesheet" href="/css/new-blog-post.css">
-
-        <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
+    
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <form id="blog-post" method="POST" action="/post-already">
-            <textarea class="post-title" name="post-title" maxlength="500" placeholder="Bold Title Here"></textarea>
-            <textarea class="post-body" name="post-body" placeholder="And an elequent story to be fortold hence..."></textarea>
-            <input id="well-post-it-already" type="submit" />
+        <form id="blog-post" method="POST">
+            <textarea id="post-title" name="post-title" maxlength="500" placeholder="Bold Title Here">{{ post_title if post_title != None }}</textarea>
+            <textarea id="post-body" name="post-body" placeholder="And an elequent story to be fortold hence...">{{ post_body if post_body != None }}</textarea>
+            <input id="well-post-it-already" type="submit" value="Submit" />
         </form>
-        
-        <!-- <svg version="1.1" viewBox="0.0 0.0 960.0 720.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="arrow"><clipPath id="p.0"><path d="m0 0l960.0 0l0 720.0l-960.0 0l0 -720.0z" clip-rule="nonzero"></path></clipPath><g clip-path="url(#p.0)"><path fill="#000000" fill-opacity="0.0" d="m0 0l960.0 0l0 720.0l-960.0 0z" fill-rule="nonzero"></path><path fill="#0088cc" fill-opacity="0.498" d="m205.35957 235.05249l0 80.1004l0 0c0 44.23822 35.862167 80.1004 80.10039 80.1004l277.43506 0l0 22.885803l45.771667 -45.771637l-45.771667 -45.771667l0 22.885834l-277.43506 0l0 0c-18.959229 0 -34.32872 -15.369507 -34.32872 -34.328735l0 -80.1004z" fill-rule="nonzero"></path></g></svg> -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-        <!--<script src="/js/vendor/bootstrap.min.js"></script>-->
-
-        <script src="/js/plugins.js"></script>
-        <script src="/js/miniblog.js"></script>
-        
-        <script>
-            $(document).ready(function() {
-                // use localstorage to autosave post before submission
-                autoSave();
-                
-                // handle tab & enter differently
-                handleSpecialKeys();
-                
-                $('textarea.post-title').focus();
-                
-                //$('textarea').one("change", $('img#arrow').hide());
-            });
-        </script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        <script type="text/javascript" src="/js/new-blog-post.js"></script>
     </body>
 </html>

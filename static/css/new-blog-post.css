@@ -1,59 +1,45 @@
 form#blog-post {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 10px 30px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
 }
 
+textarea:focus { outline: none; }
 textarea {
-    padding: 0;
     border: 0;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     resize: none;
-    overflow: hidden;
     box-shadow: none;
     color: #444;
-    font-family: Arial;
     text-align: justify;
     line-height: 1.5em;
+    font-family: Arial;
 }
 
-textarea:focus {
-    outline: none;    
-}
-
-.post-title {
+textarea#post-title {
+    overflow: hidden;
     font-size: 48px;
     font-weight: bold;
     height: 1.5em;
 }
 
-textarea.post-body {
+textarea#post-body {
     display: block;
     position: absolute;
-    bottom: 0;
     top: 0;
-    left: 0;
-    right: 0;
+    height: 75%;    /* would do bottom: 0; but firefox didn't like it... */
+    left: 2.5%;
     margin: 80px 0;
     font-size: 18px;
-}
-
-textarea.post-body:hover {
     overflow-y: auto;
 }
 
-input[type=submit]:hover {
-    opacity: 0.7;
-}
-
+input[type=submit]#well-post-it-already:hover { opacity: 0.7; }
 input[type=submit]#well-post-it-already {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 10px;
+    right: 30px;
     height: 50px;
     width: 150px;
     color: #fff;

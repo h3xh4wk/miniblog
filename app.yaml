@@ -1,5 +1,5 @@
 application: miniblog
-version: 3
+version: selfhost-v0-9
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -7,15 +7,18 @@ default_expiration: 7d
 
 handlers:
 - url: /favicon\.ico
-  static_files: static/img/favicon.ico
+  static_files: /static/img/favicon.ico
   upload: favicon\.ico
+
+- url: /post/?
+  script: main.app
 
 - url: /blog/(.*)
   script: main.app
 
 - url: /(.*?)/(.*)
   static_files: static/\1/\2
-  upload: static/(.*)
+  upload: static/(.*)/(.*)
 
 - url: /.*
   script: main.app
