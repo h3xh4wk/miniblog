@@ -1,5 +1,5 @@
 application: miniblog
-version: selfhost-v0-9
+version: v0-9-selfhost
 runtime: python27
 api_version: 1
 threadsafe: yes
