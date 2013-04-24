@@ -1,4 +1,5 @@
 # DB model for all blog posts (+ all functions for DB queries)
+# TODO: error checking & logging
 
 import logging
 import datetime
@@ -70,9 +71,6 @@ class Mail(ndb.Model):
         if limit:
             key_list = key_list[:limit]
             
-        try:
-            posts = [ndb.get(key) for key in key_list]
-        except ndb.BadQueryError:
-            logging.error('Bad Mail query: %s' % post_query)
+        posts = [ndb.get(key) for key in key_list]
         
         return posts
