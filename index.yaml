@@ -14,9 +14,4 @@ indexes:
   properties:
   - name: title_path
   - name: birthday
-
-- kind: Mail
-  properties:
-  - name: title_path
-  - name: birthday
     direction: desc

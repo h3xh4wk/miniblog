@@ -17,7 +17,8 @@ from mail import Mail
 from tools import get_title_path, \
                   user_query, \
                   elapsed_human_time, \
-                  MAX_POSTS_PER_PAGE
+                  MAX_POSTS_PER_PAGE, \
+                  SEARCH_INDEX_NAME
 
 # jinja setup (including custom formatting for date for template rendering)
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -29,7 +30,7 @@ jinja_env.filters['datetime'] = lambda dt: dt.strftime("%Y-%m-%d %H:%M:%S")
         
 class Handler(webapp2.RequestHandler):
 
-    # some handy reusable handlers for template rendering and some basic routing
+    # some handy reusable handlers for basic template rendering and routing
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
     
@@ -94,7 +95,7 @@ class NewHandler(Handler):
         
         # put blog post in document search
         try:
-            search.Index(name='post-search').put(doc)
+            search.Index(name=SEARCH_INDEX_NAME).put(doc)
         except search.Error:
             logging.error('Document search PUT failed')
         

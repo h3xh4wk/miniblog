@@ -1,6 +1,6 @@
-/********************************************************
-TODO: responsive css & better cleanup/merge bootstrap css
-*********************************************************/
+/***************************************************************
+TODO: responsive css & better cleanup and merge of bootstrap css
+****************************************************************/
 
 body {
     position: absolute;
@@ -40,6 +40,7 @@ a.post-title:hover {
 }
 
 article.post-body > blockquote > p { line-height: inherit; }
+article.post-body > p > img { margin: 50px 0; }
 article.post-body {
     font-size: 1.25em;
     margin: 1em 0;

@@ -1,4 +1,5 @@
 MAX_POSTS_PER_PAGE = 15
+SEARCH_INDEX_NAME = 'post-search'
 
 
 # add custom libs to path (e.g. import lib.my_lib)
@@ -99,12 +100,12 @@ def user_query(query, limit=1000):
     # do the query and get the blog posts
     try:
         query = search.Query(query_string=query, options=options)
-        index = search.Index(name='post-search')
+        index = search.Index(name=SEARCH_INDEX_NAME)
         results = index.search(query)
         
     except (TypeError, ValueError):
         logging.error('Document search QUERY failed')
-     
+
     post_keys = [result.doc_id for result in results.results]
        
     return post_keys

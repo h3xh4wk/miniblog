@@ -72,5 +72,6 @@ class Mail(ndb.Model):
             key_list = key_list[:limit]
             
         posts = [ndb.Key(urlsafe=key).get() for key in key_list]
+        posts = filter(None, posts) # TODO: shouldn't have to do this
         
         return posts

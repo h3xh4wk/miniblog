@@ -31,9 +31,43 @@
                 </div>
             {% endfor %}
         </div>
-
-        <script type="text/javascript" src="/js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="/js/google_code_prettify.js"></script>
+        
+        <!-- MathJax -->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: { 
+            
+                // autonumbers \begin{equation}, \end{equation}
+                equationNumbers: { autoNumber: "AMS" },
+            
+                extensions: ["autobold.js", // (auto) bold inside <b> tags
+                             "cancel.js",   // homework style strikeouts
+                             "color.js",    // custom color formatting
+                             "enclose.js"]  // draw shapes
+            },
+            
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            
+            "HTML-CSS": {
+                styles: {
+                    '.MathJax_Display': {
+                        "margin": "2em 0"
+                    }
+                }
+            },
+            
+            imageFont: null
+        });
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript">if(!window.MathJax){document.write('<script type="text/javascript" src="/js/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>');}</script>
+        
+        <!-- Google Code Prettify -->
+        <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <!-- <script type="text/javascript" src="/js/google_code_prettify.js"></script> -->
 
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

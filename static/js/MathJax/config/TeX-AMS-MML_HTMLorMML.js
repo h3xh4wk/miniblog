@@ -12,34 +12,7 @@
  *      http://www.apache.org/licenses/LICENSE-2.0
  */
 
-MathJax.Hub.Config({delayJaxRegistration: true,
-                    /* miniblog config */
-                    TeX: { 
-                    
-                        // autonumbers \begin{equation}, \end{equation}
-                        equationNumbers: { autoNumber: "AMS" },
-                    
-                        extensions: ["autobold.js", // (auto) bold inside <b> tags
-                                     "cancel.js",   // homework style strikeouts
-                                     "color.js",    // custom color formatting
-                                     "enclose.js"]  // draw shapes
-                    },
-                    
-                    tex2jax: {
-                        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-                    },
-                    
-                    "HTML-CSS": {
-                        styles: {
-                            '.MathJax_Display': {
-                                "margin": "2em 0"
-                            }
-                        }
-                    },
-                    imageFont: null
-                    /* end miniblog config */
-});
+MathJax.Hub.Config({delayJaxRegistration: true});
 
 MathJax.Ajax.Preloading(
   "[MathJax]/jax/input/TeX/config.js",
